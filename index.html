@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <title>키엘 공식 온라인 몰</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="img/favicon.png" type="img/kiehl_favicon">
+    <!-- 부트스트랩 5 css cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- swiper css cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- 외부css연결 -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/media_main.css" type="text/css">
+    <!-- script font 연결 -->
+    <link href="http://fonts.cdnfonts.com/css/freestyle-script" rel="stylesheet">   
+    <!-- 제이쿼리 라이브러리 연결 -->
+    <script src="js/jquery-3.6.0.js"></script>
+    <!-- swiper js cdn -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- 부트스트랩 5 js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- 외부 js 연결 -->
+    <script src="js/js.js"></script>
+    <!-- 지도 구글맵 -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=ko"></script> 
+  
+    <script> 
+        function initialize() { 
+      var myLatlng = new google.maps.LatLng(37.56100283746103, 126.98095671157267); // 좌표값
+        var mapOptions = { 
+              zoom: 14, // 지도 확대레벨 조정
+              center: myLatlng, 
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+        } 
+        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); 
+        var marker = new google.maps.Marker({ 
+      position: myLatlng, 
+      map: map, 
+      title: "키엘 롯데백화점 본점" // 마커에 마우스를 올렸을때 간략하게 표기될 설명글
+      }); 
+        } 
+      window.onload = initialize;
+      </script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="header_wrap">
+                <div class="logo">
+                    <!-- 배경으로 로고 이미지 넣음 (로고 흰/검 두가지버전) -->
+                    <a href="index.html"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">NEW</a>
+                            <ul class="sub">
+                                <li><a href="#">신제품</a></li>
+                                <li><a href="#">울트라 훼이셜 크림</a></li>
+                                <li><a href="#">칼렌듈라 꽃잎 토너</a></li>
+                                <li><a href="#">키엘 투명 에센스</a></li>
+                                <li><a href="#">파워풀 비타민 C 에센스</a></li>
+                                <li><a href="#">키엘 수퍼크림</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">베스트셀러</a>
+                            <ul class="sub">
+                                <li><a href="#">베스트셀러</a></li>
+                                <li><a href="#">베스트 셀러 점보사이즈</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">스킨케어</a>
+                            <ul class="sub">
+                                <li><a href="#">클렌저 & 스크럽</a></li>
+                                <li><a href="#">토너</a></li>
+                                <li><a href="#">모이스처라이저</a></li>
+                                <li><a href="#">에센스</a></li>
+                                <li><a href="#">크림</a></li>
+                                <li><a href="#">아이 & 립 케어</a></li>
+                                <li><a href="#">마스크</a></li>
+                                <li><a href="#">자외선 차단제</a></li>
+                                <hr>
+                                <li><a href="#">피부고민별 제품 찾기</a></li>
+                                <li><a href="#">컬렉션별 제품 찾기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">맨 케어</a>
+                            <ul class="sub">
+                                <li><a href="#">맨 베스트 셀러</a></li>
+                                <li><a href="#">클렌저 & 쉐이빙</a></li>
+                                <li><a href="#">토너</a></li>
+                                <li><a href="#">모이스처라이저</a></li>
+                                <li><a href="#">아이 & 립 케어</a></li>
+                                <li><a href="#">안티 에이징</a></li>
+                                <li><a href="#">바디 & 핸드 스페셜 케어</a></li>
+                                <li><a href="#">자외선 차단제</a></li>
+                                <hr>
+                                <li><a href="#">피부고민별 제품 찾기</a></li>
+                                <li><a href="#">컬렉션별 제품 찾기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">바디 & 헤어</a>
+                            <ul class="sub">
+                                <li><a href="#">헤어 샴푸</a></li>
+                                <li><a href="#">헤어 컨디셔너</a></li>
+                                <li><a href="#">헤어 트리트먼트</a></li>
+                                <li><a href="#">헤어 스타일링</a></li>
+                                <li><a href="#">바디 클렌저 & 스크럽</a></li>
+                                <li><a href="#">바디 모이스처라이저</a></li>
+                                <li><a href="#">핸드 & 바디 스페셜 케어</a></li>
+                                <li><a href="#">맘 & 베이비</a></li>
+                                <li><a href="#">향수</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">반려동물</a>
+                            <ul class="sub">
+                                <li><a href="#">반려동물용품</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">키엘 프렌즈 데이</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="menu">
+                    <!-- 배경으로 로고 이미지 넣음 (로고 흰/검 두가지버전) -->
+                    <a href="#"></a>
+                </div>
+                <!-- 서브메뉴 배경 -->
+                <div class="sub_bg"></div>
+            </div>
+        </header>
+        <!-- 메인이미지 -->
+        <section class="s1">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" id="main1">
+                        <div class="main_txt">
+                            <i><img src="img/slide1_icon.png" alt="키엘아이콘"></i>
+                            <h1>FINEST APOTHECARY SKINCARE
+                            <br>자연성분 • 피부과학 • 맞춤서비스</h1>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" id="main2">
+                        <div class="main_txt">
+                            <i><img src="img/logo_white.png" alt="키엘로고"></i>
+                            <h1>키엘은 동물 실험에 반대하는 브랜드이며 
+                            <br>동물 실험 퇴치를 위해 노력합니다.</h1>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" id="main3">
+                        <div class="main_txt">
+                            <i><img src="img/green.png" alt="자연주의"></i>
+                            <h1>키엘의 제품은
+                            <br>동물 추출 원료를 함유하지 않은
+                            <br>식물 유래 인증 제품입니다.</h1>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" id="main4">
+                        <div class="main_txt">
+                            <i><img src="img/give_logo_bg_wh.png" alt="기브스로고"></i>
+                            <h1>키엘 기브즈를 통해 우리의 기업 
+                            <br>철학을 실천하고 고객과 사회에 보답합니다.</h1>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" id="main5">
+                        <div class="main_txt">
+                            <h1>FACIAL FURE FOR MENS</h1>
+                            <p>남성 피부에 수분 활력 충전 ,
+                            <br>내면의 아름다움을 꺼내보세요</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" id="main6">
+                        <div class="main_txt">
+                            <h1>What’s the Best Face Mask 
+                            <br>for your skin ?</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-play"></div>
+                <div class="swiper-pause"></div>
+            </div>
+        </section>
+        <section class="s2">
+            <div class="center">
+                <div class="row">
+                    <div class="col-xl-6 company_txt">
+                        <div class="row_logo">
+                            <img src="img/logo_bl.png" alt="키엘로고">
+                        </div>
+                        <h1>키엘은 1851년 콜럼비아 약대를 졸업한
+                        <br>존 키엘(JOHN KIEHL)이 뉴욕 13번가에
+                        <br>오픈한 ‘키엘 약국’에서 시작되었습니다.</h1>
+
+                        <p>51년 뉴욕 조재 약국에서 출발한 160년
+                        <br>전통의 코스메틱 브랜드 키엘은 내추럴 성분에 
+                        <br>대한 노하우를 바탕으로 탁월한 효과를 
+                        <br>제공하는 제품만을 만들어오고 있습니다.</p>
+                    </div>
+                    <div class="col-xl-6 company_img">
+                        <img src="img/s2.JPG" alt="키엘 1851년 당시 약국 모습">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="s3">
+            <div class="center">
+                <div class="s3_stroke">
+                    <div class="st_left fade_animation"></div>
+                    <div class="st_right fade_animation"></div>
+                </div>
+                <div class="s3_des">
+                    <p class="fade_animation">FINEST APOTHECARY SKINCARE</p>
+                    <h1 class="fade_animation">TODAY BEST SELLER</h1>
+                </div>
+                <div class="product up_animation">
+                    <div class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide p1">
+                              <div class="p_top">
+                                <h3>TONER</h3>
+                                <i><img src="img/plus_icon.png" alt="더보기 아이콘"></i>
+                              </div>
+                              <div class="photo_box">
+                                  <div class="photo"></div>
+                              </div>
+                              <div class="p_bottom">
+                                <h3>칼렌듈라 허벌 엑스트렉트 토너</h3>
+                                <div class="p_left">
+                                    <h4>250ml</h4>
+                                    <p>5,9000원</p>
+                                </div>
+                                <div class="p_right">
+                                    <h4>500ml</h4>
+                                    <p>102,000원</p>
+                                </div>
+                              </div>
+                         </div>
+                         <div class="swiper-slide p2">
+                            <div class="p_top">
+                                <h3>AMPLE</h3>
+                                <i><img src="img/plus_icon.png" alt="더보기 아이콘"></i>
+                            </div>
+                            <div class="photo_box">
+                                <div class="photo"></div>
+                            </div>
+                              <div class="p_bottom">
+                                <h3>미드나잇 리커버리 컨센트레이트</h3>
+                                <div class="p_center">
+                                    <h4>300ml</h4>
+                                    <p>6,9000원</p>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide p3">
+                            <div class="p_top">
+                                <h3>ASSENCE</h3>
+                                <i><img src="img/plus_icon.png" alt="더보기 아이콘"></i>
+                              </div>
+                              <div class="photo_box">
+                                <div class="photo"></div>
+                              </div>
+                              <div class="p_bottom">
+                                <h3>페블릭 브루 에센스</h3>
+                                <div class="p_left">
+                                    <h4>100ml</h4>
+                                    <p>8,6000원</p>
+                                </div>
+                                <div class="p_right">
+                                    <h4>200ml</h4>
+                                    <p>129,000원</p>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide p4">
+                            <div class="p_top">
+                                <h3>CREAM</h3>
+                                <i><img src="img/plus_icon.png" alt="더보기 아이콘"></i>
+                              </div>
+                              <div class="photo_box">
+                                <div class="photo"></div>
+                              </div>
+                              <div class="p_bottom">
+                                <h3>울트라 훼이셜 크림</h3>
+                                <div class="p_left">
+                                    <h4>50ml</h4>
+                                    <p>4,4000원</p>
+                                </div>
+                                <div class="p_right">
+                                    <h4>125ml</h4>
+                                    <p>88,000원</p>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="s4">
+            <div class="center container">
+                <p class="fade_animation">FINEST APOTHECARY SKINCARE</p>
+                <h3 class="fade_animation">SPECIAL PRODUCT</h3>
+                <div class="row">
+                    <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-6 s4_left">
+                        <div class="s4_img s4_ani1">
+                            <img src="img/baby.jpg" alt="베이비&맘 상품이미지">
+                        </div>
+                        <div class="s4_des s4_ani2">
+                            <h1>BABY & MOM</h1>
+                            <p>연약해지고 건조해지기 쉬운
+                                엄마와 아기를 위해 부드럽고
+                                촉촉한 영양 케어
+                            </p>
+                            <a href="#">
+                                <div class="arrow_left">
+                                    <img src="img/btn_arrow_left.png" alt="화살표">
+                                </div>
+                                <p>상품 보러가기</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-6 s4_right">
+                        <div class="s4_img s4_ani3">
+                            <img src="img/pet.jpg" alt="펫 상품이미지">
+                        </div>
+                        <div class="s4_des s4_ani4">
+                            <h1>PET & CAT</h1>
+                            <p>자연 유래성분으로 
+                                순하고 더 순한
+                                반려견 전용 상품
+                            </p>
+                            <a href="#">
+                                <div class="arrow_right">
+                                    <img src="img/btn_arrow_right.png" alt="화살표">
+                                </div>
+                                <p>상품 보러가기</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="s5">
+            <div class="center">
+                <div class="acc up_animation">
+                    <div class="acc_item acc1">
+                        <h1>E-Gift Card 
+                            <br>선물하기</h1>
+                    </div>
+                    <div class="acc_item acc2">
+                        <h1>전화 문의 안내</h1>
+                    </div>
+                    <div class="acc_item acc3 active">
+                        <h1>매장 안내</h1>
+                        <p>키엘 매장에서 고객님을 
+                        <br>더욱 친절하게 안내해드리겠습니다.</p>
+                    </div>
+                    <div class="acc_item acc4">
+                        <h1>전성분 안내</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="s6">
+            <div class="center">
+                <div class="s6_title">
+                    <img src="img/insta_bl.png" alt="인스타그램 로고" id="insta_top">
+                    <img src="img/instagram_txt.png" alt="인스타그램 로고 텍스트"id="insta_bt">
+                    <p>www.instagram.com/kiehlskorea/</p>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li class="up_animation"><a href="#">
+                            <img src="img/insta_bl.png" alt="인스타그램 로고" id="insta_top">
+                            <img src="img/instagram_txt.png" alt="인스타그램 로고 텍스트"id="insta_bt">
+                            <p>www.instagram.com/kiehlskorea/</p>
+                        </a></li>
+                        <li class="up_animation"><a href="#">
+                            <img src="img/dasi_1.jpg" alt="인스타그램 사진1">
+                        </a></li>
+                        <li class="up_animation"><a href="#">
+                            <img src="img/dasi_2.jpg" alt="인스타그램 사진2">
+                        </a></li>
+                        <li class="up_animation"><a href="#">
+                            <img src="img/dasi_3.jpg" alt="인스타그램 사진3">
+                        </a></li>
+                        <li class="up_animation up_delay"><a href="#">
+                            <img src="img/dasi_4.jpg" alt="인스타그램 사진4">
+                        </a></li>
+                        <li class="up_animation up_delay"><a href="#">
+                            <img src="img/dasi_5.jpg" alt="인스타그램 사진5">
+                        </a></li>
+                        <li class="up_animation up_delay"><a href="#">
+                            <img src="img/dasi_6.jpg" alt="인스타그램 사진6">
+                        </a></li>
+                        <li class="up_animation up_delay"><a href="#">
+                            <img src="img/dasi_7.jpg" alt="인스타그램 사진7">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="s7">
+            <div id="map_canvas"></div>
+            <div class="s7_addr up_animation">
+                <div class="s7_img">
+                    <div class="s7_icon">
+                        <i><img src="img/map_icon2.png" alt="지도 아이콘"></i>
+                        <p>서울</p>
+                    </div>
+                </div>
+                <div class="s7_info">
+                    <h1>신세계백화점 본점</h1>
+                    <address>
+                        서울특별시 중구 퇴계로 77번지 
+                        신세계백화점 신관 1층, 
+                        서울, 04530
+                    </address>
+                    <address>
+                        77, Toegye-ro 90-gil, Jung-gu, Seoul, Republic of Korea
+                    </address>
+                    <div class="delivery s7_des">
+                        <div class="tel_icon icon">
+                            <img src="img/call.png" alt="전화 아이콘">
+                        </div>
+                        <div class="tel_number s7_txt">
+                            <p>02-318-1440</p>
+                        </div>
+                    </div>
+                    <div class="time s7_des">
+                        <div class="time_icon icon">
+                            <img src="img/clock.png" alt="시계 아이콘">
+                        </div>
+                        <div class="time_number s7_txt">
+                            <p>오전 10:30 ~ 20:30까지</p>
+                        </div>
+                    </div>
+                    <div class="user s7_des">
+                        <div class="user_icon icon">
+                            <img src="img/user.png" alt="사람모양 아이콘">
+                        </div>
+                        <div class="user_number s7_txt">
+                            <p>휴무 없음</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="center">
+                <div class="footer_logo">
+                    <img src="img/logo_white.png" alt="키엘 로코">
+                </div>
+                <div class="footer_txt">
+                    <div class="txt_1">
+                        <copyright>
+                            Ⓒ 2022 KIEHL’S SINCE 1851. 
+                        </copyright>
+                        <span>
+                            <ul>
+                                <li><a href="#">개인정보처리방침</a></li>
+                                <li><a href="#">이용약관</a></li>
+                                <li><a href="#">쿠키정책</a></li>
+                                <li><a href="#">글로벌사이트</a></li>
+                            </ul>
+                        </span>
+                    </div>
+                    <address>사업자명: 엘오케이(유)｜대표: 크리스티앙 마르코스 아르나이
+                    <br>사업자 등록번호: 220-81-73483 |통신판매업신고: 2012-서울강남-01663
+                    <br>사업자 정보 확인▶주소: 서울특별시 강남구 영동대로 517 아셈타워 31층
+                    <br>개인정보 보호 책임자: 이정민｜고객 케어 센터: 구매, 배송, 사이트 이용 문의 080-822-3322
+                    </address>
+                </div>
+                <div class="footer_site">
+                    <div class="sns">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="img/insta_wh.png" alt="인스타그램 로고"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/face_wh.png" alt="페이스북 로고"></a>
+                            </li>   
+                        </ul>
+                    </div>
+                    <div class="family">
+                        <a href="#" class="fa_btn">Family Site</a>
+                        <a href="#">에코시스템즈</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- top버튼 -->
+        <div class="top">TOP</div>
+    </div>
+    <!-- 사이트맵 -->
+    <div class="sitemap">
+        <div class="site_logo">
+            <img src="img/logo_bl.png" alt="사이트맵 로고">
+        </div>
+        <div class="site_close">
+            <a href="#"><img src="img/close.png" alt="닫기"></a>
+        </div>
+        <nav class="site_nav">
+            <ul>
+                <li>
+                    <a href="#">NEW</a>
+                    <ul class="sub">
+                        <li><a href="#">신제품</a></li>
+                        <li><a href="#">울트라 훼이셜 크림</a></li>
+                        <li><a href="#">칼렌듈라 꽃잎 토너</a></li>
+                        <li><a href="#">키엘 투명 에센스</a></li>
+                        <li><a href="#">파워풀 비타민 C 에센스</a></li>
+                        <li><a href="#">키엘 수퍼크림</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">베스트셀러</a>
+                    <ul class="sub">
+                        <li><a href="#">베스트셀러</a></li>
+                        <li><a href="#">베스트 셀러 점보사이즈</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">스킨케어</a>
+                    <ul class="sub">
+                        <li><a href="#">클렌저 & 스크럽</a></li>
+                        <li><a href="#">토너</a></li>
+                        <li><a href="#">모이스처라이저</a></li>
+                        <li><a href="#">에센스</a></li>
+                        <li><a href="#">크림</a></li>
+                        <li><a href="#">아이 & 립 케어</a></li>
+                        <li><a href="#">마스크</a></li>
+                        <li><a href="#">자외선 차단제</a></li>
+                        <hr>
+                        <li><a href="#">피부고민별 제품 찾기</a></li>
+                        <li><a href="#">컬렉션별 제품 찾기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">맨 케어</a>
+                    <ul class="sub">
+                        <li><a href="#">맨 베스트 셀러</a></li>
+                        <li><a href="#">클렌저 & 쉐이빙</a></li>
+                        <li><a href="#">토너</a></li>
+                        <li><a href="#">모이스처라이저</a></li>
+                        <li><a href="#">아이 & 립 케어</a></li>
+                        <li><a href="#">안티 에이징</a></li>
+                        <li><a href="#">바디 & 핸드 스페셜 케어</a></li>
+                        <li><a href="#">자외선 차단제</a></li>
+                        <hr>
+                        <li><a href="#">피부고민별 제품 찾기</a></li>
+                        <li><a href="#">컬렉션별 제품 찾기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">바디 & 헤어</a>
+                    <ul class="sub">
+                        <li><a href="#">헤어 샴푸</a></li>
+                        <li><a href="#">헤어 컨디셔너</a></li>
+                        <li><a href="#">헤어 트리트먼트</a></li>
+                        <li><a href="#">헤어 스타일링</a></li>
+                        <li><a href="#">바디 클렌저 & 스크럽</a></li>
+                        <li><a href="#">바디 모이스처라이저</a></li>
+                        <li><a href="#">핸드 & 바디 스페셜 케어</a></li>
+                        <li><a href="#">맘 & 베이비</a></li>
+                        <li><a href="#">향수</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">반려동물</a>
+                    <ul class="sub">
+                        <li><a href="#">반려동물용품</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">키엘 프렌즈 데이</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="site_sns">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i><img src="img/insta_bl.png" alt="인스타그램"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i><img src="img/face_bl.png" alt="인스타그램"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
